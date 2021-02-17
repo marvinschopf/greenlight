@@ -57,7 +57,7 @@ module Registrar
   # Add validation errors to model if they exist
   def valid_user_or_captcha
     valid_user = @user.valid?
-    valid_captcha = Rails.configuration.recaptcha_enabled ? verify_recaptcha(model: @user) : true
+    valid_captcha = Rails.configuration.recaptcha_enabled ? verify_recaptcha(model: @user) : (Rails.configuration.hcaptcha_enabled ? verify_hcaptcha(model: @user) : true)
 
     logger.error("Support: #{@user.email} creation failed: User params are not valid.") unless valid_user
 
