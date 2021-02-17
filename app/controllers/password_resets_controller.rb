@@ -88,9 +88,9 @@ class PasswordResetsController < ApplicationController
   # Checks that the captcha passed is valid
   def valid_captcha
     if Rails.configuration.recaptcha_enabled
-      verify_recaptcha
+      return verify_recaptcha
     elsif Rails.configuration.hcaptcha_enabled
-      verify_hcaptcha
+      return verify_hcaptcha
     else
       return true
     end
