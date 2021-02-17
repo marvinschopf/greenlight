@@ -111,7 +111,8 @@ module Greenlight
     config.recaptcha_enabled = ENV['RECAPTCHA_SITE_KEY'].present? && ENV['RECAPTCHA_SECRET_KEY'].present?
 
     # Whether the user has defined the variables needed for HCaptcha and Recaptcha is disabled
-    config.hcaptcha_enabled = ENV['HCAPTCHA_SITE_KEY'].present? && ENV['HCAPTCHA_SECRET_KEY'].present? && !config.recaptcha_enabled
+    config.hcaptcha_enabled = ENV['HCAPTCHA_SITE_KEY'].present ? && ENV['HCAPTCHA_SECRET_KEY'].present ? && 
+      !config.recaptcha_enabled
 
     # Show/hide "Add to Google Calendar" button in the room page
     config.enable_google_calendar_button = (ENV['ENABLE_GOOGLE_CALENDAR_BUTTON'] == "true")
