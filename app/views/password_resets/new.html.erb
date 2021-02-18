@@ -34,7 +34,17 @@
 
             <% if hcaptcha_enabled? %>
               <div class="form-group">
-                <%= hcaptcha_tags(theme: "light") %>
+                <div id="hcaptcha"></div>
+                <script
+                  src="https://hcaptcha.com/1/api.js?onload=renderHcaptcha&render=explicit"
+                  async
+                  defer
+                ></script>
+                <script>
+                  var renderHcaptcha = function () {
+                    hcaptcha.render('hcaptcha', { sitekey: '<%= ENV['HCAPTCHA_SITE_KEY'] %>' });
+                  };
+                </script>
               </div>
             <% end %>
       
