@@ -57,9 +57,9 @@ module Registrar
   # Add validation errors to model if they exist
   def valid_user_or_captcha
     valid_user = @user.valid?
-    valid_captcha = if Rails.configuration.recaptcha_enabled?
+    valid_captcha = if Rails.configuration.recaptcha_enabled
                       verify_recaptcha(model: @user)
-                    elsif Rails.configuration.hcaptcha_enabled?
+                    elsif Rails.configuration.hcaptcha_enabled
                       verify_hcaptcha(model: @user)
                     else
                       true
