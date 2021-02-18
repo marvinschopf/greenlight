@@ -94,6 +94,6 @@ class PasswordResetsController < ApplicationController
           else
             true
           end
-    return res
+    res
   end
 end
