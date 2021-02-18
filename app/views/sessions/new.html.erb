@@ -78,7 +78,7 @@
               <% end %>
               <% if hcaptcha_enabled? %>
                 <div class="form-group">
-                  <%= hcaptcha_tags %>
+                  <%= hcaptcha_tags(theme: "light") %>
                   <div class="invalid-feedback d-block"><%= @user.errors.full_messages_for(:base).first %></div>
                 </div>
               <% end %>
