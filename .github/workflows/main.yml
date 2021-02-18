@@ -10,7 +10,7 @@ env:
 name: CI
 on:
   push:
-    branches: ["master", "implement-hcaptcha"]
+    branches: "master"
   pull_request:
     branches: "*"
 
